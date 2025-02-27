@@ -1,0 +1,102 @@
+[
+    {
+        "id": "cuaderno-01",
+        "titulo": "Cuaderno 01",
+        "imagen": "./img/cuadernos/01.jpg",
+        "categoria": {
+            "nombre": "Cuadernos",
+            "id": "cuadernos"
+        },
+        "precio": 80
+    },
+    {
+        "id": "cuaderno-02",
+        "titulo": "Cuaderno 02",
+        "imagen": "./img/cuadernos/02.jpg",
+        "categoria": {
+            "nombre": "Cuadernos",
+            "id": "cuadernos"
+        },
+        "precio": 60
+    },
+    {
+        "id": "cuaderno-03",
+        "titulo": "Cuaderno 03",
+        "imagen": "./img/cuadernos/03.jpg",
+        "categoria": {
+            "nombre": "Cuadernos",
+            "id": "cuadernos"
+        },
+        "precio": 80
+    },
+    {
+        "id": "cuaderno-04",
+        "titulo": "Cuaderno 04",
+        "imagen": "./img/cuadernos/04.jpg",
+        "categoria": {
+            "nombre": "Cuadernos",
+            "id": "cuadernos"
+        },
+        "precio": 60
+    },
+    {
+        "id": "cuaderno-05",
+        "titulo": "Cuaderno 05",
+        "imagen": "./img/cuadernos/05.jpg",
+        "categoria": {
+            "nombre": "Cuadernos",
+            "id": "cuadernos"
+        },
+        "precio": 60
+    },
+    {
+        "id": "pluma-01",
+        "titulo": "Pluma 01",
+        "imagen": "./img/plumas/01.jpg",
+        "categoria": {
+            "nombre": "Plumas",
+            "id": "plumas"
+        },
+        "precio": 99
+    },
+    {
+        "id": "pluma-02",
+        "titulo": "Pluma 02",
+        "imagen": "./img/plumas/02.jpg",
+        "categoria": {
+            "nombre": "Plumas",
+            "id": "plumas"
+        },
+        "precio": 99
+    },
+    {
+        "id": "pluma-03",
+        "titulo": "Pluma 03",
+        "imagen": "./img/plumas/03.jpg",
+        "categoria": {
+            "nombre": "Plumas",
+            "id": "plumas"
+        },
+        "precio": 80
+    },
+    {
+        "id": "pluma-04",
+        "titulo": "Pluma 04",
+        "imagen": "./img/plumas/04.jpg",
+        "categoria": {
+            "nombre": "Plumas",
+            "id": "plumas"
+        },
+        "precio": 80
+    },
+    {
+        "id": "pluma-05",
+        "titulo": "Pluma 05",
+        "imagen": "./img/plumas/05.jpg",
+        "categoria": {
+            "nombre": "Plumas",
+            "id": "plumas"
+        },
+        "precio": 80
+    }
+]
