@@ -24,17 +24,32 @@ function cargarProductos(productosElegidos) {
 
     contenedorProductos.innerHTML = "";
 
+    const reseñasGuardadas = JSON.parse(localStorage.getItem("reseñas")) || {};
+
     productosElegidos.forEach(producto => {
         console.log("Ruta de imagen:", producto.imagen); // 👀 Agrega este console.log
         const div = document.createElement("div");
         div.classList.add("producto");
+        const reseñas = reseñasGuardadas[producto.id] || [];
         div.innerHTML = `
             <img class="producto-imagen" src="${producto.imagen}" alt="${producto.titulo}">
             <div class="producto-detalles">
                 <h3 class="producto-titulo">${producto.titulo}</h3>
                 <p class="producto-precio">$${producto.precio}</p>
                 <button class="producto-agregar" id="${producto.id}">Agregar</button>
-            </div>
+
+             <!-- Reseñas -->
+            <div class="reseñas">
+                <h4>Reseñas</h4>
+                <div id="lista-reseñas-${producto.id}" class="lista-reseñas">
+                 ${reseñas.map(texto => `<p>🗨️ ${texto}</p>`).join("")}
+                 </div>
+                <textarea id="input-reseña-${producto.id}" placeholder="Escribe tu reseña..."></textarea><br>
+                <button onclick="agregarReseña('${producto.id}')">Enviar Reseña</button>
+      
+            
+            
+                </div>
         `;
 
         contenedorProductos.append(div);
@@ -62,6 +77,31 @@ botonesCategorias.forEach(boton => {
 
     })
 });
+
+function agregarReseña(id) {
+    const textarea = document.getElementById("input-reseña-" + id);
+    const texto = textarea.value.trim();
+    const contenedor = document.getElementById("lista-reseñas-" + id);
+  
+    if (texto !== "") {
+      // Mostrar la nueva reseña en pantalla
+      const nuevaReseña = document.createElement("p");
+      nuevaReseña.textContent = "🗨️ " + texto;
+      contenedor.appendChild(nuevaReseña);
+  
+      // Guardar en localStorage
+      const reseñas = JSON.parse(localStorage.getItem("reseñas")) || {};
+      if (!reseñas[id]) {
+        reseñas[id] = [];
+      }
+      reseñas[id].push(texto);
+      localStorage.setItem("reseñas", JSON.stringify(reseñas));
+  
+      // Limpiar textarea
+      textarea.value = "";
+    }
+  }
+  
 
 function actualizarBotonesAgregar() {
     botonesAgregar = document.querySelectorAll(".producto-agregar");

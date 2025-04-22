@@ -393,3 +393,24 @@ main {
         grid-template-columns: 1fr;
     }
 }
+
+.reseñas {
+    margin-top: 10px;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+    font-size: 0.9em;
+  }
+  
+  .reseñas textarea {
+    width: 100%;
+    height: 60px;
+    margin: 5px 0;
+  }
+  
+  .lista-reseñas p {
+    background-color: #000000;
+    margin: 3px 0;
+    padding: 5px;
+    border-radius: 4px;
+  }
+  
