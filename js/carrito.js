@@ -129,14 +129,86 @@ function actualizarTotal() {
 }
 
 botonComprar.addEventListener("click", comprarCarrito);
-function comprarCarrito() {
 
-    productosEnCarrito.length = 0;
-    localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
-    
+function comprarCarrito() {
     contenedorCarritoVacio.classList.add("disabled");
     contenedorCarritoProductos.classList.add("disabled");
     contenedorCarritoAcciones.classList.add("disabled");
     contenedorCarritoComprado.classList.remove("disabled");
 
+    const totalCalculado = productosEnCarrito.reduce((acc, producto) => acc + (producto.precio * producto.cantidad), 0);
+
+    const fecha = new Date();
+    const fechaHora = fecha.toLocaleString("es-MX", {
+        day: "2-digit", month: "2-digit", year: "numeric",
+        hour: "2-digit", minute: "2-digit", second: "2-digit"
+    });
+
+    const numeroPedido = "UP" + Math.floor(Math.random() * 900000 + 100000); // Ej: UP684327
+
+    let ticketHTML = `
+        <div id="ticket" style="
+            font-family: 'Courier New', monospace;
+            background: #fff;
+            color: #000;
+            width: 320px;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            border: 1px dashed #333;
+            line-height: 1.6;
+        ">
+            <h2 style="text-align:center;">🧾 UniPatch</h2>
+            <p style="text-align:center; font-size: 0.9rem;">Gracias por tu compra</p>
+            <hr>
+            <p style="font-size: 0.8rem;"><strong>Fecha:</strong> ${fechaHora}</p>
+            <p style="font-size: 0.8rem;"><strong>Pedido:</strong> ${numeroPedido}</p>
+            <hr>
+    `;
+
+    productosEnCarrito.forEach(producto => {
+        ticketHTML += `
+            <div style="margin-bottom: 10px;">
+                <strong>${producto.titulo}</strong><br>
+                Cant: ${producto.cantidad} x $${producto.precio}<br>
+                Subtotal: $${producto.precio * producto.cantidad}
+            </div>
+        `;
+    });
+
+    ticketHTML += `
+            <hr>
+            <p><strong>Total: $${totalCalculado}</strong></p>
+            <hr>
+            <p style="text-align:center; font-size: 0.8rem;">www.unipatch.com</p>
+        </div>
+
+        <div style="text-align:center; margin-top: 20px;">
+            <button onclick="window.print()" style="
+                background: #4b33a8;
+                color: #fff;
+                border: none;
+                padding: 10px 15px;
+                border-radius: 5px;
+                cursor: pointer;
+                font-size: 0.9rem;
+            ">🖨️ Imprimir / Guardar PDF</button>
+
+            <a href="index.html" style="
+                margin-left: 10px;
+                text-decoration: none;
+                background: #666;
+                color: #fff;
+                padding: 10px 15px;
+                border-radius: 5px;
+                font-size: 0.9rem;
+            ">Volver a la tienda</a>
+        </div>
+    `;
+
+    contenedorCarritoComprado.innerHTML = ticketHTML;
+
+    productosEnCarrito.length = 0;
+    localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
 }
