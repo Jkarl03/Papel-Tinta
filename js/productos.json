@@ -98,5 +98,55 @@
             "id": "plumas"
         },
         "precio": 80
+    },
+    {
+        "id": "lapiz-01",
+        "titulo": "Lapiz 01",
+        "imagen": "./img/lapices/01.jpg",
+        "categoria": {
+            "nombre": "Lapices",
+            "id": "lapices"
+        },
+        "precio": 45
+    },
+    {
+        "id": "lapiz-02",
+        "titulo": "Lapiz 02",
+        "imagen": "./img/lapices/02.jpg",
+        "categoria": {
+            "nombre": "Lapices",
+            "id": "lapices"
+        },
+        "precio": 45
+    },
+    {
+        "id": "lapiz-03",
+        "titulo": "Lapiz 03",
+        "imagen": "./img/lapices/03.jpg",
+        "categoria": {
+            "nombre": "Lapices",
+            "id": "lapices"
+        },
+        "precio": 55
+    },
+    {
+        "id": "lapiz-04",
+        "titulo": "Lapiz 04",
+        "imagen": "./img/lapices/04.jpg",
+        "categoria": {
+            "nombre": "Lapices",
+            "id": "lapices"
+        },
+        "precio": 55
+    },
+    {
+        "id": "lapiz-05",
+        "titulo": "Lapiz 05",
+        "imagen": "./img/lapices/05.jpg",
+        "categoria": {
+            "nombre": "Lapices",
+            "id": "lapices"
+        },
+        "precio": 55
     }
 ]
