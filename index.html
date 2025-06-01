@@ -9,9 +9,35 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="stylesheet" href="./css/main.css">
 </head>
+
 <body>
-   
+  
+    <section class="landing">
+        <div class="landing-contenido">
+            <h1>Bienvenid@ a Papel&Tinta</h1>
+    <p class="subtitulo">Tu espacio creativo comienza aquí</p>
+    <div class="botones-landing">
+      <a href="#contenedor-productos" class="btn-ver-productos">Ver productos</a>
+    
+    <ul class="beneficios">
+      <li>✏️ Productos seleccionados con amor</li>
+      <li>📦 Envíos rápidos y seguros</li>
+      <li>🧾 Pago 100% seguro</li>
+    </ul>
+    </div>
+    </div>
+    </section>
+
+  <header class="main-header">
+    <nav class="nav-menu">
+      <a href="historia.html">Historia</a>
+      <a href="politicas.html">Políticas</a>
+      <a href="contacto.html">Contacto</a>
+      <a href="#contenedor-productos">Productos</a>
+    </nav>
+  </header>
     <div class="wrapper">
+        <!-- contenido actual -->
         <header class="header-mobile">
             <h1 class="logo">Papel&Tinta</h1>
             <button class="open-menu" id="open-menu">
@@ -46,10 +72,9 @@
                     </li>
                 </ul>
             </nav>
-            <footer>
-                <p class="texto-footer">© 2025 T71Clase</p>
-            </footer>
+            
         </aside>
+        
         <main>
             <h2 class="titulo-principal" id="titulo-principal">Todos los productos</h2>
             <div id="contenedor-productos" class="contenedor-productos">
@@ -57,7 +82,23 @@
             </div>
         </main>
     </div>
-    
+<!-- Footer -->
+<footer class="main-footer">
+  <div class="footer-contenido">
+    <p>Visitas: <span id="contador-visitas">Cargando...</span></p>
+    <p>© 2025 Papel&Tinta</p>
+  </div>
+</footer>
+
+<!-- Chat flotante -->
+<div class="chat-flotante">
+  <a href="https://wa.me/5255241222075" target="_blank" class="chat-boton">
+    <i class="bi bi-whatsapp"></i> ¿Necesitas ayuda?
+  </a>
+</div>
+
+
+
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="./js/main.js"></script>
     <script src="./js/menu.js"></script>

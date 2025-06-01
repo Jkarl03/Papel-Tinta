@@ -164,3 +164,39 @@ function actualizarNumerito() {
     let nuevoNumerito = productosEnCarrito.reduce((acc, producto) => acc + producto.cantidad, 0);
     numerito.innerText = nuevoNumerito;
 }
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("form-contacto");
+
+  if (form) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      // Simular envío correcto
+      Toastify({
+        text: "¡Mensaje enviado con éxito! 😊",
+        duration: 3000,
+        gravity: "top",
+        position: "center",
+        style: {
+          background: "linear-gradient(to right, #a18cd1, #fbc2eb)",
+          color: "#000",
+        },
+      }).showToast();
+
+      // Resetear el formulario
+      form.reset();
+    });
+  }
+});
+
+
+
+// Contador de visitas con countapi
+fetch('https://api.countapi.xyz/hit/https://jkarl03.github.io/Papel-Tinta//visitas')
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById('contador-visitas').innerText = data.value;
+  });
