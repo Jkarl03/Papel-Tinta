@@ -195,8 +195,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 // Contador de visitas con countapi
-fetch('https://api.countapi.xyz/hit/https://jkarl03.github.io/Papel-Tinta//visitas')
+fetch("https://api.counterapi.dev/v1/hit/jkarl03.github.io/Papel-Tinta")
   .then(res => res.json())
   .then(data => {
-    document.getElementById('contador-visitas').innerText = data.value;
+    const el = document.getElementById('contador-visitas');
+    if (el) {
+      el.textContent = data.count; // "count" en lugar de "value"
+    }
+  })
+  .catch(error => {
+    console.error('Error al obtener el contador:', error);
+    const el = document.getElementById('contador-visitas');
+    if (el) el.textContent = '—';
   });
+
