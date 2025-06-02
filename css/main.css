@@ -749,4 +749,23 @@ background-color: #fefefe;
   margin: 0.3rem 0;
   font-weight: 500;
 }
+.texto-derechos {
+  margin-bottom: 1rem;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
 
+.redes-sociales {
+  display: flex;
+  gap: 1rem;
+}
+
+.redes-sociales a {
+  color: #333;
+  font-size: 1.6rem;
+  transition: color 0.3s ease;
+}
+
+.redes-sociales a:hover {
+  color: #5b4a99;
+}
